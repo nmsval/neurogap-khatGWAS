@@ -16,8 +16,8 @@ step4_binary_association_test: Binary association testing for KU GWAS using SAIG
   Ran through Hailbatch. Takes ~30 minutes.
 
 step4_ordinal_association_test: Ordinal association testing for KUF GWAS using POLMM. Prefiltering of data (MAF 0.01 == POLMM minMAF 1e-2)
-  Ran on spark cluster. Should take maybe ~2.5 - 3 days if ran all through one spark cluster. Can try to split it across multiple sparkclusters
-hailctl dataproc start nv-fusion \
+  Ran on spark cluster. Should take maybe ~2.5 - 3 days if ran all through one spark cluster. 
+hailctl dataproc start nv-polmm \
   --master-machine-type n1-highmem-16 \
   --worker-machine-type n1-highmem-16 \
   --master-boot-disk-size 450 \
@@ -55,6 +55,7 @@ step9_h2: Using LDSC to calculate heritability estimate.
 
 step10_twas_fusion: Using FUSION to run TWAS of KU and KUF variants.
   Ran on sparkcluster. Takes ~3-4 days (?).
+hailctl dataproc start nv-fusion \
   --master-machine-type n1-highmem-32 \
   --worker-machine-type n1-highmem-32 \
   --master-boot-disk-size 400 \

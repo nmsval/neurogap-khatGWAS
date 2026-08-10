@@ -3,7 +3,7 @@ Ran on VM, so I got the Linux version of METAL from the UMich website for it: ht
 METAL requires some edits before it can perform association testing using POLMM outputs. 
 Refer tot he following steps
 
-1) transform the association testing results from POLMM using transform_polmm.sh
+1) transform the association testing results from POLMM using TransformPOLMM_BySite.sh
 	a) In this, you need the sample sizes that POLMM outputs at the end of its run.
            If you run the run_AllSites_polmm.sh version, it should output a log file for every output 
            from the VM. It says something like "X samples for X vars" and then next to it a 
@@ -20,15 +20,4 @@ Refer tot he following steps
            I added an old version of the pvalue meta-analysis script I made for other files. You can
            run it if you'd like, but the outputs are really inflated. SE is better.
 3) Transform name of headers from METAL output for topr analysis using add_chr_bp_to_metas.sh
-
-
-
-################################################################################################################
-
-These are association testings done on files that have gone through the following adjusted processes:
-
-1) gwaspy --> refer to pipeline on google slides/ask me or Lerato if you'd like to see
-2) ldprune to Lerato's paramter (>10%)
-3) minMAF 1e-2 --> appplied in POLMM, and manually applied to SAIGE outputs
-4) Uganda and AAU null model fitting have study_site added as a covariate
 
